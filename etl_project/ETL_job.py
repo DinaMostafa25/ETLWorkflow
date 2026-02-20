@@ -6,8 +6,9 @@ from sqlalchemy import create_engine
 
 # Create engine (for GitHub Actions service)
 engine = create_engine(
-    "postgresql://admin:secret@localhost:5432/etl_db"
+    "postgresql://admin:secret@postgres:5432/etl_db"
 )
+
 
 
 # --------------------
