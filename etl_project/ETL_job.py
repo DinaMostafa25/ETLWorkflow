@@ -11,9 +11,8 @@ engine = create_engine(
 
 
 
-# --------------------
-# Extract
-# --------------------
+# Extract step
+
 def extract(f_path):
     print("Start Extract...")
     try:
@@ -26,9 +25,8 @@ def extract(f_path):
         sys.exit(1)
 
 
-# --------------------
-# Transform
-# --------------------
+# Transform step 
+
 def transform(df):
     print("Start Transform...")
     try:
@@ -51,9 +49,9 @@ def transform(df):
         sys.exit(1)
 
 
-# --------------------
+
 # Load to PostgreSQL
-# --------------------
+
 def load(df):
     print("Start Load to PostgreSQL...")
     try:
@@ -65,9 +63,9 @@ def load(df):
         sys.exit(1)
 
 
-# --------------------
+
 # Main
-# --------------------
+
 if __name__ == "__main__":
 
     start_time = datetime.now()
