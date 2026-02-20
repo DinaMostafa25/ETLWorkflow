@@ -56,7 +56,7 @@ jobs:
 
       - name: Run tests
         run: pytest tests/
-        
+
       - name: Run SQL file
         run: |
           sudo apt-get update
@@ -65,4 +65,13 @@ jobs:
         env:
           PGPASSWORD: secret
         working-directory: etl_project
+
+      - name: install dbt
+         run: pip install dbt-postgres
+      - name: Run dbt models
+        run: dbt run
+      - name: test dpt models
+        run: dbt test
+               
+
 
