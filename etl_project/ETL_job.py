@@ -58,7 +58,7 @@ def transform(df):
 def load(df):
     print("START Load..............................")
     df.to_csv("output.csv", index=False)
-    print(f"DONE Load to outputcsv.........")
+    print("DONE Load to outputcsv.........")
 # main
 
 if __name__ == "__main__":
