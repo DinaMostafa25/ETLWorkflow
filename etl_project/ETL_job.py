@@ -1,6 +1,15 @@
 import pandas as pd
 from datetime import datetime
 import sys
+from sqlalchemy import create_engine
+
+
+engine = create_engine(
+    "postgresql://admin:secret@localhost:5432/etl_db"
+)
+
+df.to_sql("raw_orders", engine, if_exists="replace", index=False)
+
 
 # Extract step
 def extract(f_path):
