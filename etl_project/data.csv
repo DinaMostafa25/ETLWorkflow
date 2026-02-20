@@ -1,0 +1,51 @@
+order_id,customer_name,customer_email,order_date,product,category,quantity,unit_price,country
+1001,Dina Mostafa,dina@gmail.com,2025-01-02,Laptop,Electronics,1,1200,Egypt
+1002,Ahmed Ali,ahmed@gmail.com,2025-01-03,Headphones,Electronics,2,150,Egypt
+1003,Sara Mohamed,sara@gmail.com,2025-01-04,Coffee Maker,Home,1,200,UAE
+1004,John Smith,john@gmail.com,2025-01-05,Desk Chair,Furniture,1,350,USA
+1005,Mona Hassan,mona@gmail.com,2025-01-06,Laptop,Electronics,1,1200,Egypt
+1006,Ali Noor,ali@gmail.com,2025-01-07,Monitor,Electronics,2,400,UAE
+1007,Emily Clark,emily@gmail.com,2025-01-08,Blender,Home,1,180,USA
+1008,Omar Khaled,omar@gmail.com,2025-01-09,Keyboard,Electronics,3,80,Egypt
+1009,Youssef Adel,youssef@gmail.com,2025-01-10,Tablet,Electronics,1,600,Egypt
+1010,Nour Tarek,nour@gmail.com,2025-01-11,Sofa,Furniture,1,900,UAE
+1011,Hassan Mahmoud,hassan@gmail.com,2025-01-12,Mouse,Electronics,4,40,Egypt
+1012,Laila Ibrahim,laila@gmail.com,2025-01-13,Microwave,Home,1,300,USA
+1013,Karim Fathy,karim@gmail.com,2025-01-14,Laptop,Electronics,2,1200,Egypt
+1014,Salma Nabil,salma@gmail.com,2025-01-15,Air Fryer,Home,1,250,UAE
+1015,Adam Wilson,adam@gmail.com,2025-01-16,Bookshelf,Furniture,1,220,USA
+1016,Huda Samir,huda@gmail.com,2025-01-17,Smart Watch,Electronics,2,350,Egypt
+1017,Mahmoud Essam,mahmoud@gmail.com,2025-01-18,Printer,Electronics,1,450,UAE
+1018,Sophie Brown,sophie@gmail.com,2025-01-19,Vacuum Cleaner,Home,1,500,USA
+1019,Mostafa Reda,mostafa@gmail.com,2025-01-20,Monitor,Electronics,1,400,Egypt
+1020,Farah Ali,farah@gmail.com,2025-01-21,Keyboard,Electronics,2,80,Egypt
+1021,Daniel Lee,daniel@gmail.com,2025-01-22,Desk,Furniture,1,600,USA
+1022,Rania Adel,rania@gmail.com,2025-01-23,Laptop,Electronics,1,1200,UAE
+1023,Ismail Hany,ismail@gmail.com,2025-01-24,Headphones,Electronics,3,150,Egypt
+1024,Nancy Samy,nancy@gmail.com,2025-01-25,Toaster,Home,2,90,Egypt
+1025,Lucas White,lucas@gmail.com,2025-01-26,Chair,Furniture,2,150,USA
+1026,Amr Salah,amr@gmail.com,2025-01-27,Mouse,Electronics,2,40,Egypt
+1027,Yara Mostafa,yara@gmail.com,2025-01-28,Tablet,Electronics,1,600,UAE
+1028,Oliver King,oliver@gmail.com,2025-01-29,Blender,Home,1,180,USA
+1029,Habiba Adel,habiba@gmail.com,2025-01-30,Smartphone,Electronics,1,900,Egypt
+1030,Noah Scott,noah@gmail.com,2025-02-01,Sofa,Furniture,1,900,USA
+1031,Malak Ahmed,malak@gmail.com,2025-02-02,Printer,Electronics,1,450,Egypt
+1032,Ethan Harris,ethan@gmail.com,2025-02-03,Microwave,Home,1,300,USA
+1033,Mariam Tarek,mariam@gmail.com,2025-02-04,Monitor,Electronics,2,400,UAE
+1034,James Young,james@gmail.com,2025-02-05,Desk Chair,Furniture,1,350,USA
+1035,Reem Hassan,reem@gmail.com,2025-02-06,Laptop,Electronics,1,1200,Egypt
+1036,Benjamin Hall,ben@gmail.com,2025-02-07,Headphones,Electronics,2,150,USA
+1037,Nadine Fawzy,nadine@gmail.com,2025-02-08,Air Fryer,Home,1,250,Egypt
+1038,David Allen,david@gmail.com,2025-02-09,Bookshelf,Furniture,1,220,USA
+1039,Ahmed Magdy,ahmedmagdy@gmail.com,2025-02-10,Keyboard,Electronics,3,80,Egypt
+1040,Charlotte Green,charlotte@gmail.com,2025-02-11,Vacuum Cleaner,Home,1,500,USA
+1041,Tamer Youssef,tamer@gmail.com,2025-02-12,Smart Watch,Electronics,1,350,UAE
+1042,Hana Ali,hana@gmail.com,2025-02-13,Mouse,Electronics,5,40,Egypt
+1043,Logan Baker,logan@gmail.com,2025-02-14,Desk,Furniture,1,600,USA
+1044,Sherif Nabil,sherif@gmail.com,2025-02-15,Tablet,Electronics,2,600,Egypt
+1045,Julia Adams,julia@gmail.com,2025-02-16,Toaster,Home,1,90,USA
+1046,Mohamed Saeed,mohamed@gmail.com,2025-02-17,Monitor,Electronics,1,400,Egypt
+1047,Ava Turner,ava@gmail.com,2025-02-18,Sofa,Furniture,1,900,USA
+1048,Khaled Samy,khaled@gmail.com,2025-02-19,Smartphone,Electronics,1,900,UAE
+1049,Isabella Wright,isabella@gmail.com,2025-02-20,Blender,Home,2,180,USA
+1050,Walid Fathy,walid@gmail.com,2025-02-21,Laptop,Electronics,1,1200,Egypt
