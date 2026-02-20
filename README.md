@@ -2,17 +2,18 @@
 
 ## Overview
 
-This project implements an automated ETL (Extract, Transform, Load) pipeline using Python and Pandas, integrated with GitHub Actions for CI/CD.
+This project implements an automated ETL (Extract, Transform, Load) pipeline using Python and Pandas, integrated with PostgreSQL and fully automated using GitHub Actions for CI/CD.
 
 The pipeline:
 
 - Extracts raw data from a CSV file
 - Cleans and transforms the dataset
-- Generates a processed output file
+- Loads processed data into PostgreSQL
+- Executes analytical SQL queries
 - Runs automated unit tests
-- Uploads the output as a downloadable artifact
+- Executes entirely inside GitHub Actions
 
-The workflow runs automatically on every push to the `main` branch.
+The workflow triggers automatically on every push to the `main` branch.
 
 ---
 
@@ -21,16 +22,17 @@ The workflow runs automatically on every push to the `main` branch.
 ```
 ETLWorkflow/
 │
-├── .github/workflows/
-│   └── runetl.yml
+├── .github/
+│ └── workflows/
+│ └── runetl.yml
 │
 └── etl_project/
-    ├── ETL_job.py
-    ├── data.csv
-    ├── requirements.txt
-    ├── output.csv
-    └── tests/
-        └── test_etl.py
+├── ETL_job.py
+├── data.csv
+├── queries.sql
+├── requirements.txt
+├── tests/
+│ └── test_etl.py
 ```
 
 ---
@@ -69,14 +71,14 @@ total_price = quantity * unit_price
 
 ### 3. Load
 
-- Saves the cleaned dataset to:
+- Saves the cleaned dataset to Posgresql DB:
 
 ```
-output.csv
+raw_orders
 ```
 
 ```python
-df.to_csv("output.csv", index=False)
+df.to_sql("raw_orders", engine, if_exists="replace", index=False)
 ```
 
 ---
@@ -110,8 +112,10 @@ The workflow performs the following steps:
 2. Setup Python environment
 3. Install dependencies
 4. Run ETL script
-5. Execute unit tests
-6. Upload `output.csv` as an artifact
+5. Load data into database
+6. Execute SQL queries
+7. Run unit tests
+
 
 The workflow triggers automatically on push to `main`.
 
@@ -138,7 +142,9 @@ The output file is generated during the CI run and is not committed to the repos
 - Pytest
 - GitHub Actions
 - YAML
-
+- SQLAlchemy
+- PostgreSQL 
+- Psycopg2
 ---
 
 ## Running Locally
