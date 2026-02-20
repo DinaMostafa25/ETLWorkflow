@@ -4,80 +4,79 @@ import sys
 from sqlalchemy import create_engine
 
 
+# Create engine (for GitHub Actions service)
 engine = create_engine(
     "postgresql://admin:secret@localhost:5432/etl_db"
 )
 
-df.to_sql("raw_orders", engine, if_exists="replace", index=False)
 
-
-# Extract step
+# --------------------
+# Extract
+# --------------------
 def extract(f_path):
-
-    print("Start Extact.................")
-
-    try :
+    print("Start Extract...")
+    try:
         df = pd.read_csv(f_path)
-        print("DONE Extract......................")
+        print("DONE Extract")
         return df
     except Exception as e:
-        print("Extract error!!!!!!!!!!!!!")
+        print("Extract error!")
         print(e)
         sys.exit(1)
 
 
-# transform step 
+# --------------------
+# Transform
+# --------------------
 def transform(df):
-    print("Start Transform.................")
-
+    print("Start Transform...")
     try:
-      
-        
-        # Convert order_date to datetime and drop invalid ones
         df["order_date"] = pd.to_datetime(df["order_date"], errors="coerce")
         df = df.dropna(subset=["order_date"])
-
-        # Drop rows where quantity is null
         df = df.dropna(subset=["quantity"])
-
-        # Remove duplicates
         df = df.drop_duplicates()
 
-        # Clean country
         df["country"] = df["country"].str.upper()
-
-        # Clean customer name (title case)
         df["customer_name"] = df["customer_name"].str.title()
 
-        # Create total_price column
         df["total_price"] = df["quantity"] * df["unit_price"]
 
         print("DONE Transform")
-
         return df
 
-
     except Exception as e:
-        print("Transform error!!!!!!!!!!!!!")
+        print("Transform error!")
         print(e)
         sys.exit(1)
 
-# LOAD step 
 
+# --------------------
+# Load to PostgreSQL
+# --------------------
 def load(df):
-    print("START Load..............................")
-    df.to_csv("output.csv", index=False)
-    print("DONE Load to outputcsv.........")
-# main
+    print("Start Load to PostgreSQL...")
+    try:
+        df.to_sql("raw_orders", engine, if_exists="replace", index=False)
+        print("DONE Load to PostgreSQL")
+    except Exception as e:
+        print("Load error!")
+        print(e)
+        sys.exit(1)
 
+
+# --------------------
+# Main
+# --------------------
 if __name__ == "__main__":
 
     start_time = datetime.now()
-    print("START pipeline.........")
-    data =  extract("data.csv")
+    print("START pipeline")
+
+    data = extract("data.csv")
     output = transform(data)
     load(output)
+
     end_time = datetime.now()
 
     print("ETL pipeline completed successfully")
-    print("Time : ",  end_time - start_time)
+    print("Time:", end_time - start_time)
